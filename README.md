@@ -2,7 +2,7 @@
 
 > 参考：[https://github.com/listenzz/MyMina](https://github.com/listenzz/MyMina)
 
-结合 Webpack 打包生成微信小程序
+结合 Webpack 打包生成微信小程序的脚手架
 
 ## 启动项目
 
@@ -13,7 +13,7 @@ yarn dev
 
 ## 打包发布
 
-```
+```shell
 yarn build
 ```
 
