@@ -5,7 +5,8 @@
   "main": ".eslintrc.js",
   "scripts": {
     "dev": "webpack --watch --progress",
-    "build": "cross-env NODE_ENV=production BUILD_TYPE=release webpack"
+    "build": "cross-env NODE_ENV=production BUILD_TYPE=release webpack",
+    "lint": "eslint 'src/**/*.{js,jsx}' --cache --fix"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,6 @@
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/preset-env": "^7.4.5",
-    "@gfez/eslint-config-wechat-miniprogram": "^1.0.1",
     "@types/lodash": "^4.14.133",
     "babel-loader": "^8.2.3",
     "babel-plugin-lodash": "^3.3.4",
@@ -31,11 +31,14 @@
     "copy-webpack-plugin": "^10.2.0",
     "cross-env": "^5.1.1",
     "ensure-posix-path": "^1.1.1",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "file-loader": "^6.2.0",
-    "jest": "^24.8.0",
     "lodash-webpack-plugin": "^0.11.5",
     "node-sass": "^7.0.0",
     "npm-run-all": "^4.1.2",
+    "prettier": "^2.6.2",
     "replace-ext": "^1.0.0",
     "required-path": "^1.0.1",
     "run-script-os": "^1.0.5",

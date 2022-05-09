@@ -9,12 +9,17 @@ module.exports = {
     browser: true,
     node: true,
   },
-  ecmaFeatures: {
-    modules: true,
-  },
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
+  },
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [['@', './src']],
+        extensions: ['.js'],
+      },
+    },
   },
   globals: {
     wx: true,
@@ -27,7 +32,7 @@ module.exports = {
     requireMiniProgram: true,
   },
   root: true,
-  extends: ['@gfez/wechat-miniprogram', 'plugin:prettier/recommended'],
+  extends: ['plugin:prettier/recommended'],
   rules: {
     'prettier/prettier': [
       'error',

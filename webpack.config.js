@@ -1,4 +1,4 @@
-const {resolve} = require('path')
+const path = require('path')
 const webpack = require('webpack')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
@@ -9,16 +9,20 @@ const MinaRuntimePlugin = require('./plugins/minaRuntimePlugin')
 const debuggable = process.env.BUILD_TYPE !== 'release'
 
 module.exports = {
-  context: resolve('src'),
+  context: path.resolve('src'),
   entry: {main: './app.js'},
   output: {
-    path: resolve('dist'),
+    path: path.resolve('dist'),
     filename: '[name].js',
-    publicPath: resolve('dist'),
+    publicPath: path.resolve('dist'),
     globalObject: 'wx',
   },
   resolve: {
-    extensions: ['.js'],
+    symlinks: false,
+    cacheWithContext: false,
+    alias: {
+      '@': path.resolve('./src'),
+    },
   },
   module: {
     rules: [
@@ -36,13 +40,13 @@ module.exports = {
             options: {
               useRelativePath: true,
               name: '[path][name].wxss',
-              context: resolve('src'),
+              context: path.resolve('src'),
             },
           },
           {
             loader: 'sass-loader',
             options: {
-              sassOptions: {includePaths: [resolve('src', 'styles'), resolve('src')]},
+              sassOptions: {includePaths: [path.resolve('src', 'styles'), path.resolve('src')]},
             },
           },
         ],
