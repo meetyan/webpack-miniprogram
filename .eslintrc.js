@@ -26,6 +26,18 @@ module.exports = {
     requirePlugin: true,
     requireMiniProgram: true,
   },
-  // extends: 'eslint:recommended',
-  rules: {},
+  root: true,
+  extends: ['@gfez/wechat-miniprogram', 'plugin:prettier/recommended'],
+  rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        arrowParens: 'avoid',
+        bracketSpacing: false,
+        printWidth: 100,
+        semi: false,
+        singleQuote: true,
+      },
+    ],
+  },
 }
