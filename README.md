@@ -1,5 +1,7 @@
 # webpack-miniprogram
 
+> 参考：[https://github.com/listenzz/MyMina](https://github.com/listenzz/MyMina)
+
 结合 Webpack 打包生成微信小程序
 
 ## 启动项目
